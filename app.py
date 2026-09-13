@@ -15,19 +15,36 @@ st.set_page_config(page_title="Crop Advisory System", layout="wide")
 
 # ---------------- PATH ----------------
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 data_path = os.path.join(BASE_DIR, "Data", "Crop_recommendation.csv")
+
+
+DATA_PATH = os.path.join(BASE_DIR, "Data", "Crop_recommendation.csv")
+
+MODEL_PATH = os.path.join(
+    BASE_DIR, "models", "crop_recommendation_model.pkl"
+)
+
+SCALER_PATH = os.path.join(
+    BASE_DIR, "models", "scaler.pkl"
+)
+
+ENCODER_PATH = os.path.join(
+    BASE_DIR, "models", "label_encoder.pkl"
+)
+
 
 # ---------------- LOAD ----------------
 @st.cache_resource
 def load_models():
-    model = joblib.load("models/crop_recommendation_model.pkl")
-    scaler = joblib.load("models/scaler.pkl")
-    label_encoder = joblib.load("models/label_encoder.pkl")
+    model = joblib.load(MODEL_PATH)
+    scaler = joblib.load(SCALER_PATH)
+    label_encoder = joblib.load(ENCODER_PATH)
     return model, scaler, label_encoder
 
 @st.cache_data
 def load_data():
-    return pd.read_csv(data_path)
+    return pd.read_csv(DATA_PATH)
 
 model, scaler, label_encoder = load_models()
 df = load_data()
