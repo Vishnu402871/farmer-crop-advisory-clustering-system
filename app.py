@@ -15,7 +15,7 @@ st.set_page_config(page_title="Crop Advisory System", layout="wide")
 
 # ---------------- PATH ----------------
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-data_path = os.path.join(BASE_DIR, "data", "Crop_recommendation.csv")
+data_path = os.path.join(BASE_DIR, "Data", "Crop_recommendation.csv")
 
 # ---------------- LOAD ----------------
 @st.cache_resource
