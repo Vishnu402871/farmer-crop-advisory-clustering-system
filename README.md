@@ -235,7 +235,7 @@ we created a **hybrid intelligent crop advisory system** that is:
 
 ## 👨‍💻 Author
 
-**Author: Saurabh Kumar Mohankat**
+**Author: Todati Vishnu Vardhan**
 Machine Learning & AI Enthusiast
 
 ---
